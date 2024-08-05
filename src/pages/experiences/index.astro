@@ -3,9 +3,9 @@ import { getCollection } from "astro:content"
 import PageLayout from "@layouts/PageLayout.astro"
 import TopLayout from "@layouts/TopLayout.astro"
 import BottomLayout from "@layouts/BottomLayout.astro"
-import { WORK } from "@consts"
+import { EXPERIENCES } from "@consts"
 
-const collection = await getCollection("work")
+const collection = await getCollection("experiences")
 
 collection.sort((a, b) => new Date(b.data.dateStart).getTime() - new Date(a.data.dateStart).getTime())
 
@@ -28,10 +28,10 @@ function formatWorkDate(input: Date | string) {
 }
 ---
 
-<PageLayout title={WORK.TITLE} description={WORK.DESCRIPTION}>
+<PageLayout title={EXPERIENCES.TITLE} description={EXPERIENCES.DESCRIPTION}>
   <TopLayout>
     <div class="animate page-heading">
-      {WORK.TITLE}
+      {EXPERIENCES.TITLE}
     </div>
   </TopLayout>
   <BottomLayout>
