@@ -1,0 +1,29 @@
+---
+import { getCollection } from "astro:content"
+import PageLayout from "@layouts/PageLayout.astro"
+import TopLayout from "@layouts/TopLayout.astro"
+import BottomLayout from "@layouts/BottomLayout.astro"
+import Certificates from "@components/Certificates"
+import { CERTIFICATES } from "@consts"
+
+const certificates = (await getCollection("certificates"))
+  .sort((a, b) => a.data.priority - b.data.priority)
+
+const tags = [...new Set(certificates.flatMap(certificate => certificate.data.tags))]
+  .sort((a, b) => a.localeCompare(b))
+---
+
+<PageLayout title={CERTIFICATES.TITLE} description={CERTIFICATES.DESCRIPTION}>
+  <TopLayout>
+    <div class="animate page-heading">
+      {CERTIFICATES.TITLE}
+    </div>
+  </TopLayout>
+  <BottomLayout>
+    <div class="animate">
+      <Certificates client:load tags={tags} data={certificates} />
+    </div>
+  </BottomLayout>
+</PageLayout>
+
+

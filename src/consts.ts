@@ -25,31 +25,35 @@ export const PROJECTS: Page = {
   DESCRIPTION: "Recent projects I have worked on.",
 }
 
-// Search Page
-export const SEARCH: Page = {
-  TITLE: "Search",
-  DESCRIPTION: "Search all posts and projects by keyword.",
+// Certificates Page 
+export const CERTIFICATES: Page = {
+  TITLE: "Certificates",
+  DESCRIPTION: "Collection of my certifications.",
 }
 
 // Links
 export const LINKS: Links = [
-  { 
-    TEXT: "Home", 
-    HREF: "/", 
+  {
+    TEXT: "Home",
+    HREF: "/",
   },
-  { 
-    TEXT: "Experiences", 
-    HREF: "/experiences", 
+  {
+    TEXT: "Experiences",
+    HREF: "/experiences",
   },
-  { 
-    TEXT: "Blog", 
-    HREF: "/blog", 
+  {
+    TEXT: "Blog",
+    HREF: "/blog",
   },
-  { 
-    TEXT: "Projects", 
-    HREF: "/projects", 
+  {
+    TEXT: "Projects",
+    HREF: "/projects",
   },
-]
+  {
+    TEXT: "Certificates",
+    HREF: "/certificates",
+  },
+];
 
 // Socials
 export const SOCIALS: Socials = [
